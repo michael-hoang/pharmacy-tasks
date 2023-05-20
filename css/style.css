@@ -1,4 +1,9 @@
+.container {
+    display: flex;
+}
+
 #sidebar {
+    background-color: blue;
     display: flex;
     flex-direction: column;
     list-style-type: none;
