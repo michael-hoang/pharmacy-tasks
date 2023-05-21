@@ -91,6 +91,14 @@ table {
 
   /* Tooltip */
 
+  #foa {
+    width: 100px;
+  }
+
+  #t3 {
+    width: 430px;
+  }
+
   .tooltip {
     color: blue;
     position: relative;
@@ -113,7 +121,6 @@ table {
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
-    width: 430px;
   }
   
   .tooltip:hover .tooltip-text {
