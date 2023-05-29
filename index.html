@@ -12,26 +12,29 @@
     <aside class="sidebar">
       <ul id="sidebar-menu">
         <a href="#refill-call-goals">
-          <li class="sidebar-items">Email Refill Call Goals</li>
+          <li class="sidebar-items">Refill Call Goals</li>
         </a>
         <a href="#shipping-dashboard">
-          <li class="sidebar-items">Update Shipping Dashboard</li>
+          <li class="sidebar-items">Shipping Dashboard</li>
         </a>
         <a href="#receive-drop-ship">
-          <li class="sidebar-items">Receive Drop Ship</li>
+          <li class="sidebar-items">Receiving Drop Ship</li>
         </a>
         <a href="#order-drop-ship">
-          <li class="sidebar-items">Order Drop Ship</li>
+          <li class="sidebar-items">Ordering Drop Ship</li>
         </a>
         <a href="#third-party-vendor-drugs">
           <li class="sidebar-items">Third-party Vendor Drugs</li>
+        </a>
+        <a href="#tracelink">
+          <li class="sidebar-items">TraceLink</li>
         </a>
       </ul>
     </aside>
     <main class="main-content">
 
       <div class="content-sections" id="refill-call-goals">
-        <h3>Email Refill Call Goals</h3>
+        <h2>Refill Call Goals</h2>
         <p>
           Send an email to the refill team, copying PV2 and supervisors,
           providing the refill call goals for the day. Additionally, include
@@ -41,7 +44,7 @@
       </div>
       
       <div class="content-sections" id="shipping-dashboard">
-        <h3>Update Shipping Dashboard</h3>
+        <h2>Shipping Dashboard</h2>
         <p>
           Count the DCS and FedEx shipments for the upcoming 5 business days from
           the WAM Shipping queue (custom queue), and update the numbers in the
@@ -59,14 +62,14 @@
       </div>
 
       <div class="content-sections" id="receive-drop-ship">
-        <h3>Receive Drop Ship</h3>
+        <h2>Receiving Drop Ship</h2>
         <p>
-          FedEx drop ship packages are directly delivered to Outpatient
-          Pharmacy, while UPS drop ship packages are typically delivered to
-          Inpatient Pharmacy. UPS packages usually consist of drugs sourced
-          from Amerisourcebergen's alternative distribution center,
-          directly from the manufacturer (such as Ninlaro, Prevymis, and
-          manufacturer replacements), and some third-party vendor drugs (like Aubagio).
+          FedEx packages are delivered to Outpatient Pharmacy, while UPS
+          packages are delivered to Inpatient Pharmacy. Drugs that are
+          coming from Amerisourcebergen's alternative distribution center,
+          the manufacturer (i.e. Ninlaro, Prevymis, drug replacements), and some
+          third-party vendors (i.e. Aubagio from Optum Frontier Therapies) usually
+          get delivered via UPS.
         </p>
         <p>
           For any missing packages, check with Inpatient Pharmacy store room
@@ -109,7 +112,7 @@
           Fill on arrival </span></span> area. Ensure that both the lot number and
           expiration date are recorded. Manually update the inventory for
           third-party vendor drugs and drugs that cannot be scanned into Epic.
-          Include the quantity received, purchase order number, lot number, and
+          Include the quantity received, purchase order (PO) number, lot number, and
           expiration date in the comments.
         </p>
         <h4>Confirming Invoices</h4>
@@ -140,7 +143,7 @@
       </div>
       
       <div class="content-sections" id="order-drop-ship">
-        <h3>Order Drop Ship</h3>
+        <h2>Ordering Drop Ship</h2>
         <p>
           To ensure timely delivery, submit drop ship orders by 1 PM from
           Monday through Thursday. With the exception of urgent FOA orders, it is
@@ -172,18 +175,166 @@
         <img src="img/340b_exclusive.png" alt="">
         <p>
           Before submitting the order, check the drop ship FOA area to ensure
-          the all FOA drugs have been included in the order draft. On Macro Helix, search
+          that all FOA drugs have been included in the order draft. On Macro Helix, search
           each requested drug by NDC for any 340b accumulation. The number of
           accumulation represents the quantity of drug packages available for
           340b purchase, and it is recalculated every 24 hours. Macro Helix
-          will process any quantity of the requested packages that exceeds the 340b
+          will process any order quantity that exceeds the 340b
           accumulation through our RAC account. 
+        </p>
+        <img src="img/accumulation.png" alt="">
+        <p>
+          While checking accumulations, make any necessary adjustments to the order
+          quantity. Remember to check the drug shelves and the refrigerator for
+          any shortages or overstocks. In urgent cases where FOA drugs cannot wait
+          for 340b accumulations, they should be ordered through RAC, if available.
+          If there is an opportunity for 340b cost saving, transfer the drug to
+          a new drop ship draft and await the next recalculation of 340b accumulations.
+          Not all patients are eligible for 340b, so it is important to cross-reference
+          the recent encounter locations and the locations where prescriptions were written
+          to confirm eligibility. 
+        </p>
+        <p>
+          After reviewing the accumulations, click submit to transmit the order
+          from Epic to ABC. Open the order in ABC and punch out to <span class="italic-text">
+            MacroHelix
+            Direct
+          </span>.
+        </p>
+        <img src="img/submit_order.png" alt="" style="width: 80vw">
+        <img src="img/punch_out.png" alt="" style="border: 1px solid black; margin-top: 20px;">
+      </div>
+      
+      <div class="content-sections" id="third-party-vendor-drugs">
+        <h2>Third-party Vendor Drugs</h2>
+        <h4>Update Quarterly Prices</h4>
+        <p>At the beginning of each calendar quarter (January, April, July, and
+          October), contact all third-party vendors to request updated prices for
+          third-party drugs. These prices may include:
+          <ul>
+            <li>340B Acquisition Cost</li>
+            <li>Retail Acquisition Cost (RAC)</li>
+            <li>Wholesale Acquisition Cost (WAC)</li>
+            <li>Average Wholesale Price (AWP)</li>
+            <li>Suggested Wholesale Price (SWP)</li>
+            <li>Group Purchasing Organization Price (GPO)</li>
+          </ul>
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <td colspan="4">&nbsp;</td>
+              <th colspan="3" scope="colgroup">Contact</th>
+            </tr>
+            <tr>
+              <th scope="col">Vendor</th>
+              <th colspan="2", scope="col">Account</th>
+              <th scope="col">Drug</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Fax</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="3" scope="rowgroup">Cardinal Health</th>
+              <th scope="row">340B</th>
+              <td>2052037380</td>
+              <td rowspan="3">Nourianz</td>
+              <td rowspan="3">800-926-3161</td>
+              <td rowspan="3">--</td>
+              <td rowspan="3">gmb-sps-prostrakan@cordlogistics.com</td>
+            </tr>
+            <tr>
+              <th scope="row">WAC</th>
+              <td style="background-color: rgb(245, 245, 245);">2052037382</td>
+            </tr>
+            <tr>
+              <th scope="row" style="width: 165px;">UC IRVINE OUTPATIENT PHARMACY </th>
+              <td>2052037378</td>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">CuraScript SD</th>
+              <th scope="row">340B</th>
+              <td>92013</td>
+              <td rowspan="2">Valchlor</td>
+              <td rowspan="2"> 877-900-9223</td>
+              <td rowspan="2">866-628-8942</td>
+              <td rowspan="2">wholesalefax@curascript.com</td>
+            </tr>
+            <tr>
+              <th scope="row">RAC</th>
+              <td style="background-color: rgb(250, 250, 250);">92014</td>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Direct Success</th>
+              <th scope="row">340B</th>
+              <td rowspan="2">353019</td>
+              <td rowspan="2">Lysodren</td>
+              <td rowspan="2">877-404-3338 </td>
+              <td rowspan="2">855-674-6767</td>
+              <td rowspan="2">distribution@dsuccess.com</td>
+            </tr>
+            <tr>
+              <th scope="row">WAC</th>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Foundation Care</th>
+              <th scope="row">340B</th>
+              <td rowspan="2">7933577</td>
+              <td rowspan="2">Iclusig</td>
+              <td rowspan="2">833-291-2773</td>
+              <td rowspan="2">833-978-0054 </td>
+              <td rowspan="2">fcpiclusig@foundcare.com</td>
+            </tr>
+            <tr>
+              <th scope="row">WAC</th>
+            </tr>
+            <tr>
+              <th scope="rowgroup">Optum Frontier Therapies</th>
+              <th scope="row">340B</th>
+              <td>A20536-4</td>
+              <td>Aubagio</td>
+              <td>855-768-9727</td>
+              <td>866-991-9929 </td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Update the team with the new prices for prescription processing.
+        </p>
+        <h4>
+          Ordering
+        </h4>
+        <p>
+          To purchase any third-party drugs, a purchase order (PO) number from
+          administration is required. Frequently used drugs such as Aubagio and
+          Iclusig have their own specific <span class="tooltip">blanket PO numbers
+          <span class="tooltip-text" id="blanket-po">A blanket purchase order (PO)
+          number is a type of purchase order used in procurement processes. It is
+          a single PO that covers multiple transactions or purchases over a specific
+          period of time, typically for recurring or ongoing supplies or services.
+          </span></span>. 
+        </p>
+        <p>
+          Technicians place requests for these drugs in the comments of the drop
+          ship draft. Check if the drug will be ordered from the 340B or WAC
+          accounts. Send an email to the administration staff, including Michael
+          Vega and Diana Ornelas, and make sure to copy supervisors and the
+          compliance officer. In the email, provide the drug name, NDC, quantity,
+          vendor, account number, unit cost, total cost, and our cost center
+          (7427173). 
+        </p>
+        <p>
+          Once the PO number is received from administration, complete the order
+          form and send it to the vendor via email or fax. Order forms and PO
+          documents are in the Inventory > Drugs folder within the Shared Drive. 
         </p>
       </div>
 
-      <div class="content-selection" id="third-party-vendor-drugs">
-        <h3>Third-party Vendor Drugs</h3>
-        <p></p>
+      <div class="content-sections" id="tracelink">
+        <h2>TraceLink</h2>
       </div>
 
     </main>
