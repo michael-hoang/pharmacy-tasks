@@ -29,6 +29,9 @@
         <a href="#tracelink">
           <li class="sidebar-items">TraceLink</li>
         </a>
+        <a href="#refill-reminder-calls">
+          <li class="sidebar-items">Refill Reminder Calls</li>
+        </a>
       </ul>
     </aside>
     <main class="main-content">
@@ -105,7 +108,7 @@
             <td>844-222-2273</td>
           </tr>
         </table>
-        <h4>Updating Inventory</h4>
+        <h3>Updating Inventory</h3>
         <p>
           When scanning drugs into Epic Inventory, prioritize the ones that are
           pending from the <span class="tooltip">FOA<span class="tooltip-text" id="foa">
@@ -115,7 +118,7 @@
           Include the quantity received, purchase order (PO) number, lot number, and
           expiration date in the comments.
         </p>
-        <h4>Confirming Invoices</h4>
+        <h3>Confirming Invoices</h3>
         <p>
           Confirm the invoices in Epic for the received drugs, and record the
           corresponding PO and invoice numbers on the <span class="italic-text">
@@ -152,8 +155,8 @@
         </p>
         <p>
           Drop ship drugs are identified in the ABC Order catalog with the
-          <span class="italic-text">DROPSHIP</span> label or the
-          <span class="italic-text">Ship separately</span> indicator. 
+          <span class="italic-text">DROPSHIP</span> or the
+          <span class="italic-text">Ship separately</span> label. 
         </p> 
         <div class="img-container">
           <img src="img/dropship.png" alt="">
@@ -207,7 +210,7 @@
       
       <div class="content-sections" id="third-party-vendor-drugs">
         <h2>Third-party Vendor Drugs</h2>
-        <h4>Update Quarterly Prices</h4>
+        <h3>Update Quarterly Prices</h3>
         <p>At the beginning of each calendar quarter (January, April, July, and
           October), contact all third-party vendors to request updated prices for
           third-party drugs. These prices may include:
@@ -304,9 +307,9 @@
         <p>
           Update the team with the new prices for prescription processing.
         </p>
-        <h4>
+        <h3>
           Ordering
-        </h4>
+        </h3>
         <p>
           To purchase any third-party drugs, a purchase order (PO) number from
           administration is required. Frequently used drugs such as Aubagio and
@@ -319,7 +322,7 @@
         </p>
         <p>
           Technicians place requests for these drugs in the comments of the drop
-          ship draft. Check if the drug will be ordered from the 340B or WAC
+          ship draft. When ordering, check if the drug will be ordered from the 340B or WAC
           accounts. Send an email to the administration staff, including Michael
           Vega and Diana Ornelas, and make sure to copy supervisors and the
           compliance officer. In the email, provide the drug name, NDC, quantity,
@@ -347,6 +350,71 @@
           Log in to TraceLink Classic.
         </p>
         <img src="img/tracelink_classic.png" alt="">
+      </div>
+
+      <div class="content-sections" id="refill-reminder-calls">
+        <h2>Refill Reminder Calls</h2>
+        <h3>Loading the Report</h3>
+        <ol>
+          <li>Open the Pharmacy Refill Dashboard in Epic Hyperspace.</li>
+          <li>Run the Refill Coordination report and keep the report window open in the foreground.
+          Ensure the report window remains open during the loading process to avoid pausing the execution.</li>
+          <li>A second loading process will occur, and its progress can be seen at the bottom right corner.</li>
+          <li>Once the report is fully loaded, filter it by the "Next Refill Coordination" date and the "Enrolled Programs" mentioned in the Refill Call Goals email.</li>
+        </ol>
+        <h3>Processing Claims</h3>
+        <p>
+          Before contacting a patient for a refill, verify active insurance coverage
+          by adjudicating the claim in Epic Willow Ambulatory (WAM).
+          Remove the Ready By time located at the bottom right corner in WAM.
+          This will separate specialty medications from outpatient medications
+          by moving the fill to the bottom of the Ready to Fill queue.
+        </p>
+        <p>
+          For unresolved rejected claims, see the next section on how to document
+          in the Specialty Pharmacy Encounter.
+        </p>
+        <h3>Specialty Pharmacy Encounters</h3>
+        <p>
+          Refill coordination, clinical reassessments, creating MyChart encounters, and setting the
+          next follow-up dates happen in the Specialty Pharmacy Encounter in
+          Epic Hyperspace. From the Refill Coordination report, right-click on the
+          patient and select 'Encounter.' A window will appear, displaying a list of open encounters
+          at the medical center. Check if a Specialty Pharmacy Encounter has already
+          been created for this month's fill. Open the encounter if it exists, or
+          create a new encounter by clicking 'New Encounter' and selecting 'Specialty Pharmacy'.
+        </p>
+
+        <div style="margin-left: 20px;">
+          <h4>Progress Notes</h4>
+          <p>
+            Document all pharmacy tasks related to the patient's medication fill
+            in the Progress Notes. Some tasks include:
+            <ul>
+              <li>insurance rejections</li>
+              <li>conversations with patients</li>
+              <li>sending MyChart messages</li>
+              <li>leaving voice mails</li>
+              <li>refill coordination</li>
+              <li>clinical reassessments</li>
+            </ul>
+          </p>
+          <h4>Specialty Pharmacy Tab</h4>
+          <p>
+            The Specialty Pharmacy tab is used to monitor adherence, update the medication
+            and allergies list, document Drug Utilization Review (DUR), symptoms, and interventions, track patient
+            financial savings, and record patient quality of life. Fill out the
+            Specialty Pharmacy tab after scheduling a refill or completing a clinical reassessment.
+          </p>
+          <h4>Wrap Up</h4>
+          <p>
+
+          </p>
+          <h4>Enrollment Tab</h4>
+          <p>
+
+          </p>
+        </div>
       </div>
 
     </main>
