@@ -376,27 +376,26 @@
         </p>
         <h3>Specialty Pharmacy Encounters</h3>
         <p>
-          Refill coordination, clinical reassessments, creating MyChart encounters, and setting the
-          next follow-up dates happen in the Specialty Pharmacy Encounter in
-          Epic Hyperspace. From the Refill Coordination report, right-click on the
+          Refill notes, clinical reassessments (RA), MyChart communications, and future follow-up
+          coordinations occur in Epic Hyperspace's Specialty Pharmacy Encounter. From the Refill Coordination report, right-click on the
           patient and select 'Encounter.' A window will appear, displaying a list of open encounters
           at the medical center. Check if a Specialty Pharmacy Encounter has already
           been created for this month's fill. Open the encounter if it exists, or
           create a new encounter by clicking 'New Encounter' and selecting 'Specialty Pharmacy'.
         </p>
 
-        <div style="margin-left: 20px;">
+        <div style="margin-left: 50px;">
           <h4>Progress Notes</h4>
           <p>
             Document all pharmacy tasks related to the patient's medication fill
             in the Progress Notes. Some tasks include:
             <ul>
-              <li>insurance rejections</li>
-              <li>conversations with patients</li>
-              <li>sending MyChart messages</li>
-              <li>leaving voice mails</li>
+              <li>insurance rejection</li>
+              <li>conversation with the patient</li>
+              <li>sending MyChart message</li>
+              <li>leaving voice mail</li>
               <li>refill coordination</li>
-              <li>clinical reassessments</li>
+              <li>clinical reassessment</li>
             </ul>
           </p>
           <h4>Specialty Pharmacy Tab</h4>
@@ -406,15 +405,74 @@
             financial savings, and record patient quality of life. Fill out the
             Specialty Pharmacy tab after scheduling a refill or completing a clinical reassessment.
           </p>
-          <h4>Wrap Up</h4>
+          <h4>Wrap Up Tab</h4>
           <p>
-
+            The Wrap Up tab is used for scheduling future follow-ups. Make
+            sure to always select the Refill Coordination checkbox and have a
+            follow-up date. The patient will not populate in the Refill Coordination
+            report if any of these parameters are missing. Also select the Clinical
+            Reassessment checkbox if it was completed for this encounter.
           </p>
           <h4>Enrollment Tab</h4>
           <p>
-
+            Patients are enrolled in the management program through the Enrollment tab.
+            Enrollments take place during the First Fill Review, while disenrollments
+            occur when patients no longer receive our services. It's advisable to confirm patient's
+            enrollment before scheduling the next follow-up, particularly for
+            returning patients who have resumed using our services.
+            Disenrolled patients will not appear on the Refill Coordination report.
           </p>
         </div>
+        <p>
+          Only sign encounters if no additional follow-ups are needed for the current month's fill
+          (completing refill coordination without needing an intervention for a patient).
+          Encounters that are pending patient contact, need a pharmacist's intervention,
+          or require a clinical reassessment should not be signed. A pharmacist will
+          review and sign the encounter for interventions or clinical reassessments
+          during verification.
+        </p>
+
+        <h3>Scheduling Refills</h3>
+        <p>
+          Prior to contacting the patient for refills, check the patient notes on
+          the refill report and pharmacy notes in the patient's WAM profile for
+          the reassessment (RA) due date and any other relevant information relating
+          to the patient. Additionally, verify if the patient is enrolled to receive
+          MyChart messages. Follow the patient outreach diagram provided below for
+          specialty and soft specialty medications.
+        </p>
+        <h4>Specialty (Category A, PMP, True Specialty)</h4>
+        <p>
+          Up to six attempts will be made to contact the patient. If the patient is
+          enrolled in MyChart, alternate between sending MyChart messages and making
+          phone calls. In case reaching the patient remains unsuccessful after the sixth
+          attempt, remove the wrap-up date and escalate the encounter to the clinical
+          pharmacist due to noncompliance.
+        </p>
+        <img src="img/refill_outreach_pmp.png" alt="" style="width: 110%;">
+        <p>
+          If the patient is not opted out of the patient management program (PMP),
+          screen the patient during the refill call for the following:
+          <ul>
+            <li>Days supply on hand/next injection due date/next cycle start date</li>
+            <li>Changes to the current medication (direction/dose)</li>
+            <li>Changes to the patient's medication profile (new medications/discontinued medications)</li>
+            <li>New allergies</li>
+            <li>Side-effects</li>
+            <li>Medication efficacy (working a little, a lot, can't tell)</li>
+            <li>Adherence (missed/late doses)</li>
+            <li>Quality of life (1-10 best)</li>
+          </ul>
+          Any changes mentioned is considered an intervention and needs to be routed to the pharmacist (PV2).
+        </p>
+
+        <h4>Soft Specialty (Category B)</h4>
+        <p>
+          The patient will be contacted up to three times. Use the smart texts
+          ".softspfinalmychart" for the final MyChart message and ".softspfinalnote"
+          for the final progress note template.
+        </p>
+        <img src="img/refill_outreach_softsp.png" alt="" style="width: 80%;">
       </div>
 
     </main>
