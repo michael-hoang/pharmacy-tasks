@@ -44,6 +44,9 @@
           any remaining refill calls from previous days and remind the team to
           check the Refill Review queue and resolve any pending requests in WAM.
         </p>
+        <img src="img/refill_call_goal_email.png" alt="" style="border: 1px solid black; margin-top: 10px;">
+        <br>
+        <img src="img/refill_review_queue.png" alt="" style="margin-top: 20px;">
       </div>
       
       <div class="content-sections" id="shipping-dashboard">
@@ -93,15 +96,15 @@
           </tr>
           <tr>
             <td>Store Room</td>
-            <td>456-xxxx</td>
+            <td>456-5237</td>
           </tr>
           <tr>
             <td>Infusion Pharmacy</td>
-            <td>456-xxxx</td>
+            <td>456-5324</td>
           </tr>
           <tr>
             <td>IDS Pharmacy</td>
-            <td>456-xxxx</td>
+            <td>456-7833</td>
           </tr>
           <tr>
             <td>Amerisourcebergen</td>
@@ -313,12 +316,7 @@
         <p>
           To purchase any third-party drugs, a purchase order (PO) number from
           administration is required. Frequently used drugs such as Aubagio and
-          Iclusig have their own specific <span class="tooltip">blanket PO numbers
-          <span class="tooltip-text" id="blanket-po">A blanket purchase order (PO)
-          number is a type of purchase order used in procurement processes. It is
-          a single PO that covers multiple transactions or purchases over a specific
-          period of time, typically for recurring or ongoing supplies or services.
-          </span></span>. 
+          Iclusig have their own specific blanket PO numbers. 
         </p>
         <p>
           Technicians place requests for these drugs in the comments of the drop
@@ -332,8 +330,9 @@
         <p>
           Once the PO number is received from administration, complete the order
           form and send it to the vendor via email or fax. Order forms and PO
-          documents are in the Inventory > Drugs folder within the Shared Drive. 
+          documents are in the <span class="italic-text">Inventory > Third-Party Vendor Drop Ship Drugs </span>folder within the Shared Drive. 
         </p>
+        <img src="img/third_party_path.png" alt="">
       </div>
 
       <div class="content-sections" id="tracelink">
@@ -349,27 +348,50 @@
         <p>
           Log in to TraceLink Classic.
         </p>
-        <img src="img/tracelink_classic.png" alt="">
+        <img src="img/tracelink_classic.png" alt="" style="margin-left: 50px;">
+        <p>Select <span class="italic-text">MODULES > Compliance-US Product Track</span>.</p>
+        <img src="img/tracelink_modules.png" alt="" style="margin-left: 50px;">
+        <p>Go to <span class="italic-text">View Transaction Histories</span>.</p>
+        <img src="img/tracelink_trans_hist.png" alt="" style="margin-left: 50px;">
+        <p>Click on <span class="italic-text">Create Transaction History for Received Paper</span></p>
+        <img src="img/tracelink_create_trans_hist.png" alt="" style="margin-left: 50px;">
+        <p>Complete the fields, upload the T3 document, and then click <span class="italic-text">Submit</span>.</p>
+        <img src="img/tracelink_submit.png" alt="" style="margin-left: 50px;">
       </div>
 
       <div class="content-sections" id="refill-reminder-calls">
         <h2>Refill Reminder Calls</h2>
         <h3>Loading the Report</h3>
         <ol>
-          <li>Open the Pharmacy Refill Dashboard in Epic Hyperspace.</li>
-          <li>Run the Refill Coordination report and keep the report window open in the foreground.
-          Ensure the report window remains open during the loading process to avoid pausing the execution.</li>
-          <li>A second loading process will occur, and its progress can be seen at the bottom right corner.</li>
-          <li>Once the report is fully loaded, filter it by the "Next Refill Coordination" date and the "Enrolled Programs" mentioned in the Refill Call Goals email.</li>
+          <li>Open the <span class="italic-text">UCI Willow Ambulatory Pharmacist & Technician Dashboard</span> in Epic Hyperspace.</li>
+          <li>
+            Run the <span class="italic-text">Refill Coordination - All Diseases</span> report and keep the report window open in the foreground.
+            Ensure the report window remains open during the loading process to avoid pausing the execution.
+            <br>
+            <div style="display: flex;">
+              <img src="img/refill_dashboard.png" alt="" style="width: 55%; margin: 30px 0">
+              <img src="img/report_first_load.png" alt="" style="width: 50%; margin-left: 20px;">
+            </div>
+          </li>
+          <li>
+            A second loading process will occur, and its progress can be seen at the bottom right corner.
+            <br>
+            <img src="img/report_second_load.png" alt="" style="margin: 20px 0">
+          </li>
+          <li>
+            Once the report is fully loaded, filter it by the "Next Refill Coordination" date and the "Enrolled Programs" mentioned in the Refill Call Goals email.
+            <img src="img/report_filter.png" alt="" style="width: 25%; margin: 20px 0;">
+          </li>
         </ol>
         <h3>Processing Claims</h3>
         <p>
           Before contacting a patient for a refill, verify active insurance coverage
           by adjudicating the claim in Epic Willow Ambulatory (WAM).
-          Remove the Ready By time located at the bottom right corner in WAM.
+          Remove the Ready At time located at the bottom right corner in WAM.
           This will separate specialty medications from outpatient medications
           by moving the fill to the bottom of the Ready to Fill queue.
         </p>
+        <img src="img/ready_at_time.png" alt="">
         <p>
           For unresolved rejected claims, see the next section on how to document
           in the Specialty Pharmacy Encounter.
@@ -378,10 +400,18 @@
         <p>
           Refill notes, clinical reassessments (RA), MyChart communications, and future follow-up
           coordinations occur in Epic Hyperspace's Specialty Pharmacy Encounter. From the Refill Coordination report, right-click on the
-          patient and select 'Encounter.' A window will appear, displaying a list of open encounters
+          patient and select 'Encounter.' 
+          <img src="img/right_click_encounter.png" alt="" style="width: 70%; margin: 20px 0;">
+          <br>
+          A window will appear, displaying a list of open encounters
           at the medical center. Check if a Specialty Pharmacy Encounter has already
-          been created for this month's fill. Open the encounter if it exists, or
-          create a new encounter by clicking 'New Encounter' and selecting 'Specialty Pharmacy'.
+          been created for this month's fill. 
+          <img src="img/open_encounter.png" alt="" style="margin: 20px 0;">
+          <br>
+          Open the encounter if it exists, or
+          create a new encounter by clicking <span class="italic-text">New</span> and selecting 'Specialty Pharmacy'.
+          <br>
+          <img src="img/new_encounter.png" alt="" style="margin: 20px 0">
         </p>
 
         <div style="margin-left: 50px;">
@@ -397,6 +427,8 @@
               <li>refill coordination</li>
               <li>clinical reassessment</li>
             </ul>
+            <br>
+            <img src="img/progress_note_box.png" alt="" style="margin-left: 20px;">
           </p>
           <h4>Specialty Pharmacy Tab</h4>
           <p>
@@ -404,6 +436,8 @@
             and allergies list, document Drug Utilization Review (DUR), symptoms, and interventions, track patient
             financial savings, and record patient quality of life. Fill out the
             Specialty Pharmacy tab after scheduling a refill or completing a clinical reassessment.
+            <br>
+            <img src="img/specialty_tab.png" alt="" style="margin: 20px 20px 0">
           </p>
           <h4>Wrap Up Tab</h4>
           <p>
@@ -412,6 +446,8 @@
             follow-up date. The patient will not populate in the Refill Coordination
             report if any of these parameters are missing. Also select the Clinical
             Reassessment checkbox if it was completed for this encounter.
+            <br>
+            <img src="img/wrap_up.png" alt="" style="margin: 20px 20px 0;">
           </p>
           <h4>Enrollment Tab</h4>
           <p>
@@ -421,6 +457,8 @@
             enrollment before scheduling the next follow-up, particularly for
             returning patients who have resumed using our services.
             Disenrolled patients will not appear on the Refill Coordination report.
+            <br>
+            <img src="img/enrollment_tab.png" alt="" style="margin: 20px 20px 0;">
           </p>
         </div>
         <p>
@@ -430,6 +468,8 @@
           or require a clinical reassessment should not be signed. A pharmacist will
           review and sign the encounter for interventions or clinical reassessments
           during verification.
+          <br>
+          <img src="img/sign_encounter.png" alt="" style="margin: 20px 0">
         </p>
 
         <h3>Scheduling Refills</h3>
@@ -463,16 +503,44 @@
             <li>Adherence (missed/late doses)</li>
             <li>Quality of life (1-10 best)</li>
           </ul>
-          Any changes mentioned is considered an intervention and needs to be routed to the pharmacist (PV2).
+          If the patient mentions any changes, it is considered an intervention, and the encounter should be routed to the pharmacist (PV2) under the Wrap Up tab.
+          <br>
+          <img src="img/routing.png" alt="" style="margin: 20px 0;">
         </p>
 
         <h4>Soft Specialty (Category B)</h4>
         <p>
           The patient will be contacted up to three times. Use the smart texts
-          ".softspfinalmychart" for the final MyChart message and ".softspfinalnote"
-          for the final progress note template.
+          ".SOFTSPLASTMYCHART" for the final MyChart message and ".SOFTSPLASTNOTE"
+          for the final progress note.
         </p>
-        <img src="img/refill_outreach_softsp.png" alt="" style="width: 80%;">
+        <img src="img/refill_outreach_softsp.png" alt="" style="width: 80%; margin: 20px 0;">
+        <h4>Shipping</h4>
+        <p>
+          We offer two shipping services: DCS for Orange County deliveries and
+          FedEx Express for deliveries outside Orange County. No deliveries occur
+          on weekends or holidays, and we do not ship out of state.
+          Refer to the provided tables when scheduling a delivery.
+        </p>
+        <br>
+        <img src="img/dcs_fedex.png" alt="" style="margin-bottom: 25px;">
+        <img src="img/shipping_table.png" alt="" style="margin-left: 20px;">
+
+        <p>
+          Include the <span class="italic-text">Mail Order</span> flag in WAM with the ship date. <br>
+          If the patient has Medicare Part B or Humana Part D insurance, a signature is mandatory for the delivery.
+        </p>
+        <h4>Pick Up</h4>
+        <p>
+          Ask for the date and time if the patient is picking up. Check with the pharmacist (PV2)
+          if the patient wants to pick up on the weekend.
+        </p>
+        <h4>After Scheduling</h4>
+        <p>
+          Restock the medication by adding the NDC in the specialty inventory draft.
+          Print and fill out the <span class="italic-text">Call Slip</span> to serve as the cover sheet for your order basket.
+          <img src="img/print_call_slip.png" alt="" style="margin-top: 20px; width: 90%;">
+        </p>
       </div>
 
     </main>
