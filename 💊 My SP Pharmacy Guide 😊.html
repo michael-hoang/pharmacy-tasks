@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html {
+      font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .content-sections {
+      height: auto;
+      min-height: 100vh;
+      padding-top: 1%;
+      width: 80%;
+    }
+
+    .img-container {
+      display: flex;
+    }
+
+    .img-container img {
+      margin-right: 40px;
+    }
+
+    .italic-text {
+      font-style: italic;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 240px;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    #sidebar-menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #sidebar-menu li {
+      margin-bottom: 10px;
+    }
+
+    #sidebar-menu a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      padding: 10px;
+      /* background-color: #fff; */
+      border-radius: 5px;
+    }
+
+    #sidebar-menu a:hover {
+      background-color: #ddd;
+    }
+
+
+    /* Table */
+
+    table {
+      border-collapse: collapse;
+      border: 2px solid rgb(200, 200, 200);
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+    }
+
+    td,
+    th {
+      border: 1px solid rgb(190, 190, 190);
+      padding: 10px 20px;
+    }
+
+    th {
+      background-color: rgb(235, 235, 235);
+    }
+
+    td {
+      text-align: center;
+    }
+
+    tr:nth-child(even) td {
+      background-color: rgb(250, 250, 250);
+    }
+
+    tr:nth-child(odd) td {
+      background-color: rgb(245, 245, 245);
+    }
+
+    /* Tooltip */
+
+    #blanket-po {
+      width: 450px;
+    }
+
+    #foa {
+      width: 100px;
+    }
+
+    #t3 {
+      width: 430px;
+    }
+
+    .tooltip {
+      color: blue;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: underline dotted;
+    }
+
+    .tooltip-img {
+      display: none;
+      visibility: hidden;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltip-img {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+  <title>💊 My SP Pharmacy Guide 😊</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <ul id="sidebar-menu">
+        <a href="#refill-call-goals">
+          <li class="sidebar-items">Refill Call Goals</li>
+        </a>
+        <a href="#shipping-dashboard">
+          <li class="sidebar-items">Shipping Dashboard</li>
+        </a>
+        <a href="#receive-drop-ship">
+          <li class="sidebar-items">Receiving Drop Ship</li>
+        </a>
+        <a href="#order-drop-ship">
+          <li class="sidebar-items">Ordering Drop Ship</li>
+        </a>
+        <a href="#third-party-vendor-drugs">
+          <li class="sidebar-items">Third-party Vendor Drugs</li>
+        </a>
+        <a href="#tracelink">
+          <li class="sidebar-items">TraceLink</li>
+        </a>
+        <a href="#refill-reminder-calls">
+          <li class="sidebar-items">Refill Reminder Calls</li>
+        </a>
+      </ul>
+    </aside>
+    <main class="main-content">
+
+      <div class="content-sections" id="refill-call-goals">
+        <h2>Refill Call Goals</h2>
+        <p>
+          Send an email to the refill team, copying PV2 and supervisors,
+          providing the refill call goals for the day. Additionally, include
+          any remaining refill calls from previous days and remind the team to
+          check the Refill Review queue and resolve any pending requests in WAM.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/refill_call_goal_email.png" alt="" style="border: 1px solid black; margin-top: 10px;">
+        <br>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/refill_review_queue.png" alt="" style="margin-top: 20px;">
+      </div>
+
+      <div class="content-sections" id="shipping-dashboard">
+        <h2>Shipping Dashboard</h2>
+        <p>
+          Count the DCS and FedEx shipments for the upcoming 5 business days from
+          the WAM Shipping queue (custom queue), and update the numbers in the
+          Excel spreadsheet available at the following link:
+        </p>
+        <a href="https://healthuci-my.sharepoint.com/:x:/g/personal/chaconcg_hs_uci_edu/EX-5J79YhW5FmuK40rXEY4YBLt88n8CHwdeum7SV9ExMpQ?e=1ceII3"
+          target="_blank">
+          Delivery Shipments.xlsx
+        </a>
+        <p>
+          Send a reminder in the Refill Team group chat on Teams to schedule
+          the shipments evenly across the week instead of concentrating too much
+          on any particular day.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/shipping_dashboard.png" alt="">
+      </div>
+
+      <div class="content-sections" id="receive-drop-ship">
+        <h2>Receiving Drop Ship</h2>
+        <p>
+          FedEx packages are delivered to Outpatient Pharmacy, while UPS
+          packages are delivered to Inpatient Pharmacy. Drugs that are
+          coming from Amerisourcebergen's alternative distribution center,
+          the manufacturer (i.e. Ninlaro, Prevymis, drug replacements), and some
+          third-party vendors (i.e. Aubagio from Optum Frontier Therapies) usually
+          get delivered via UPS.
+        </p>
+        <p>
+          For any missing packages, check with Inpatient Pharmacy store room
+          staff and the dock. If the packages are not found, contact Infusion
+          Pharmacy and IDS pharmacy to see if they have received
+          our missing packages.
+
+          The tracking number can be accessed on the ABC Order website under
+          <span class="italic-text tooltip">Ordering > Order History
+            <span class="tooltip-img"><img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/order_history.png" alt=""></span></span>.
+          If the tracking number is not listed, reach out to Amerisourcebergen for
+          tracking assistance.
+        </p>
+        <table>
+          <tr>
+            <th></th>
+            <th>Contact #</th>
+          </tr>
+          <tr>
+            <td>Store Room</td>
+            <td>456-5237</td>
+          </tr>
+          <tr>
+            <td>Infusion Pharmacy</td>
+            <td>456-5324</td>
+          </tr>
+          <tr>
+            <td>IDS Pharmacy</td>
+            <td>456-7833</td>
+          </tr>
+          <tr>
+            <td>Amerisourcebergen</td>
+            <td>844-222-2273</td>
+          </tr>
+        </table>
+        <h3>Updating Inventory</h3>
+        <p>
+          When scanning drugs into Epic Inventory, prioritize the ones that are
+          pending from the <span class="tooltip">FOA<span class="tooltip-text" id="foa">
+              Fill on arrival </span></span> area. Ensure that both the lot number and
+          expiration date are recorded. Manually update the inventory for
+          third-party vendor drugs and drugs that cannot be scanned into Epic.
+          Include the quantity received, purchase order (PO) number, lot number, and
+          expiration date in the comments.
+        </p>
+        <h3>Confirming Invoices</h3>
+        <p>
+          Confirm the invoices in Epic for the received drugs, and record the
+          corresponding PO and invoice numbers on the <span class="italic-text">
+            Pharmacist Acceptance of Drop Shipment Order </span> form (signed by
+          the receiving pharmacist).
+        </p>
+        <p>
+          Scan <span class="tooltip">T3 documents<span class="tooltip-text" id="t3">
+              Packing slips that include the transaction history (TH), transaction
+              information (TI), and transaction statement (TS).</span></span>
+          associated with drugs sourced from third-party vendors or directly
+          from the manufacturer into the Shared Drive for uploading onto TraceLink.
+        </p>
+        <p>
+          Submit the invoices for approval on the ABC Order website, under
+          <span class="italic-text tooltip">Receiving > Receive<span class="tooltip-img"><img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/receive.png"
+                alt=""></span></span>.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/receiving.png" alt="">
+        <p>
+          Once drop ship items are received, turn in the <span class="italic-text">
+            Pharmacist Acceptance of
+            Drop Shipment Order
+          </span> form together with the packing slips to the supervisor.
+        </p>
+      </div>
+
+      <div class="content-sections" id="order-drop-ship">
+        <h2>Ordering Drop Ship</h2>
+        <p>
+          To ensure timely delivery, submit drop ship orders by 1 PM from
+          Monday through Thursday. With the exception of urgent FOA orders, it is
+          best to avoid submitting drop ship orders on Fridays to avoid potential
+          delivery exceptions as the weekend approaches.
+        </p>
+        <p>
+          Drop ship drugs are identified in the ABC Order catalog with the
+          <span class="italic-text">DROPSHIP</span> or the
+          <span class="italic-text">Ship separately</span> label.
+        </p>
+        <div class="img-container">
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/dropship.png" alt="">
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/ships_separately.png" alt="">
+        </div>
+        <p>
+          Requesting technicians place these drugs in a separate order draft in
+          Epic labeled as <span class="italic-text">SP Dropship</span>.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/drop_ship_draft.png" alt="">
+        <p>
+          Many drugs can be purchased from both the 340b and RAC accounts.
+          However, certain drugs are exclusively available from the 340b account,
+          requiring verification of 340b accumulation on
+          <a href="https://web.mhiapps.com/" target="_blank">Macro Helix</a>.
+          These exclusively 340b drugs can be identified in the ABC Order catalog by the
+          absence of the RAC price tag.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/340b_exclusive.png" alt="">
+        <p>
+          Before submitting the order, check the drop ship FOA area to ensure
+          that all FOA drugs have been included in the order draft. On Macro Helix, search
+          each requested drug by NDC for any 340b accumulation. The number of
+          accumulation represents the quantity of drug packages available for
+          340b purchase, and it is recalculated every 24 hours. Macro Helix
+          will process any order quantity that exceeds the 340b
+          accumulation through our RAC account.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/accumulation.png" alt="">
+        <p>
+          While checking accumulations, make any necessary adjustments to the order
+          quantity. Remember to check the drug shelves and the refrigerator for
+          any shortages or overstocks. In urgent cases where FOA drugs cannot wait
+          for 340b accumulations, they should be ordered through RAC, if available.
+          If there is an opportunity for 340b cost saving, transfer the drug to
+          a new drop ship draft and await the next recalculation of 340b accumulations.
+          Not all patients are eligible for 340b, so it is important to cross-reference
+          the recent encounter locations and the locations where prescriptions were written
+          to confirm eligibility.
+        </p>
+        <p>
+          After reviewing the accumulations, click submit to transmit the order
+          from Epic to ABC. Open the order in ABC and punch out to <span class="italic-text">
+            MacroHelix
+            Direct
+          </span>.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/submit_order.png" alt="" style="width: 80vw">
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/punch_out.png" alt="" style="border: 1px solid black; margin-top: 20px;">
+      </div>
+
+      <div class="content-sections" id="third-party-vendor-drugs">
+        <h2>Third-party Vendor Drugs</h2>
+        <h3>Update Quarterly Prices</h3>
+        <p>At the beginning of each calendar quarter (January, April, July, and
+          October), contact all third-party vendors to request updated prices for
+          third-party drugs. These prices may include:
+        <ul>
+          <li>340B Acquisition Cost</li>
+          <li>Retail Acquisition Cost (RAC)</li>
+          <li>Wholesale Acquisition Cost (WAC)</li>
+          <li>Average Wholesale Price (AWP)</li>
+          <li>Suggested Wholesale Price (SWP)</li>
+          <li>Group Purchasing Organization Price (GPO)</li>
+        </ul>
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <td colspan="4">&nbsp;</td>
+              <th colspan="3" scope="colgroup">Contact</th>
+            </tr>
+            <tr>
+              <th scope="col">Vendor</th>
+              <th colspan="2" , scope="col">Account</th>
+              <th scope="col">Drug</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Fax</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="3" scope="rowgroup">Cardinal Health</th>
+              <th scope="row">340B</th>
+              <td>2052037380</td>
+              <td rowspan="3">Nourianz</td>
+              <td rowspan="3">800-926-3161</td>
+              <td rowspan="3">--</td>
+              <td rowspan="3">gmb-sps-prostrakan@cordlogistics.com</td>
+            </tr>
+            <tr>
+              <th scope="row">WAC</th>
+              <td style="background-color: rgb(245, 245, 245);">2052037382</td>
+            </tr>
+            <tr>
+              <th scope="row" style="width: 165px;">UC IRVINE OUTPATIENT PHARMACY </th>
+              <td>2052037378</td>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">CuraScript SD</th>
+              <th scope="row">340B</th>
+              <td>92013</td>
+              <td rowspan="2">Valchlor</td>
+              <td rowspan="2"> 877-900-9223</td>
+              <td rowspan="2">866-628-8942</td>
+              <td rowspan="2">wholesalefax@curascript.com</td>
+            </tr>
+            <tr>
+              <th scope="row">RAC</th>
+              <td style="background-color: rgb(250, 250, 250);">92014</td>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Direct Success</th>
+              <th scope="row">340B</th>
+              <td rowspan="2">353019</td>
+              <td rowspan="2">Lysodren</td>
+              <td rowspan="2">877-404-3338 </td>
+              <td rowspan="2">855-674-6767</td>
+              <td rowspan="2">distribution@dsuccess.com</td>
+            </tr>
+            <tr>
+              <th scope="row">WAC</th>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Foundation Care</th>
+              <th scope="row">340B</th>
+              <td rowspan="2">7933577</td>
+              <td rowspan="2">Iclusig</td>
+              <td rowspan="2">833-291-2773</td>
+              <td rowspan="2">833-978-0054 </td>
+              <td rowspan="2">fcpiclusig@foundcare.com</td>
+            </tr>
+            <tr>
+              <th scope="row">WAC</th>
+            </tr>
+            <tr>
+              <th scope="rowgroup">Optum Frontier Therapies</th>
+              <th scope="row">340B</th>
+              <td>A20536-4</td>
+              <td>Aubagio</td>
+              <td>855-768-9727</td>
+              <td>866-991-9929 </td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Update the team with the new prices for prescription processing.
+        </p>
+        <h3>
+          Ordering
+        </h3>
+        <p>
+          To purchase any third-party drugs, a purchase order (PO) number from
+          administration is required. Frequently used drugs such as Aubagio and
+          Iclusig have their own specific blanket PO numbers.
+        </p>
+        <p>
+          Technicians place requests for these drugs in the comments of the drop
+          ship draft. When ordering, check if the drug will be ordered from the 340B or WAC
+          accounts. Send an email to the administration staff, including Michael
+          Vega and Diana Ornelas, and make sure to copy supervisors and the
+          compliance officer. In the email, provide the drug name, NDC, quantity,
+          vendor, account number, unit cost, total cost, and our cost center
+          (7427173).
+        </p>
+        <p>
+          Once the PO number is received from administration, complete the order
+          form and send it to the vendor via email or fax. Order forms and PO
+          documents are in the <span class="italic-text">Inventory > Third-Party Vendor Drop Ship Drugs </span>folder
+          within the Shared Drive.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/third_party_path.png" alt="">
+      </div>
+
+      <div class="content-sections" id="tracelink">
+        <h2>TraceLink</h2>
+        <p>
+          To ensure complete traceability in the supply chain, it is necessary to
+          input and upload T3 documents received from third-party vendors or
+          manufacturers onto <a href="https://www.tracelink.com/" target="_blank">TraceLink</a>.
+          T3 documents include transaction history, transaction information, and
+          transaction statement. Amerisourcebergen manages their own T3 documents
+          on TraceLink.
+        </p>
+        <p>
+          Log in to TraceLink Classic.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/tracelink_classic.png" alt="" style="margin-left: 50px;">
+        <p>Select <span class="italic-text">MODULES > Compliance-US Product Track</span>.</p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/tracelink_modules.png" alt="" style="margin-left: 50px;">
+        <p>Go to <span class="italic-text">View Transaction Histories</span>.</p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/tracelink_trans_hist.png" alt="" style="margin-left: 50px;">
+        <p>Click on <span class="italic-text">Create Transaction History for Received Paper</span></p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/tracelink_create_trans_hist.png" alt="" style="margin-left: 50px;">
+        <p>Complete the fields, upload the T3 document, and then click <span class="italic-text">Submit</span>.</p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/tracelink_submit.png" alt="" style="margin-left: 50px;">
+      </div>
+
+      <div class="content-sections" id="refill-reminder-calls">
+        <h2>Refill Reminder Calls</h2>
+        <h3>Loading the Report</h3>
+        <ol>
+          <li>Open the <span class="italic-text">UCI Willow Ambulatory Pharmacist & Technician Dashboard</span> in Epic
+            Hyperspace.</li>
+          <li>
+            Run the <span class="italic-text">Refill Coordination - All Diseases</span> report and keep the report
+            window open in the foreground.
+            Ensure the report window remains open during the loading process to avoid pausing the execution.
+            <br>
+            <div style="display: flex;">
+              <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/refill_dashboard.png" alt="" style="width: 55%; margin: 30px 0">
+              <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/report_first_load.png" alt="" style="width: 50%; margin-left: 20px;">
+            </div>
+          </li>
+          <li>
+            A second loading process will occur, and its progress can be seen at the bottom right corner.
+            <br>
+            <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/report_second_load.png" alt="" style="margin: 20px 0">
+          </li>
+          <li>
+            Once the report is fully loaded, filter it by the "Next Refill Coordination" date and the "Enrolled
+            Programs" mentioned in the Refill Call Goals email.
+            <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/report_filter.png" alt="" style="width: 25%; margin: 20px 0;">
+          </li>
+        </ol>
+        <h3>Processing Claims</h3>
+        <p>
+          Before contacting a patient for a refill, verify active insurance coverage
+          by adjudicating the claim in Epic Willow Ambulatory (WAM).
+          Remove the Ready At time located at the bottom right corner in WAM.
+          This will separate specialty medications from outpatient medications
+          by moving the fill to the bottom of the Ready to Fill queue.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/ready_at_time.png" alt="">
+        <p>
+          For unresolved rejected claims, see the next section on how to document
+          in the Specialty Pharmacy Encounter.
+        </p>
+        <h3>Specialty Pharmacy Encounters</h3>
+        <p>
+          Refill notes, clinical reassessments (RA), MyChart communications, and future follow-up
+          coordinations occur in Epic Hyperspace's Specialty Pharmacy Encounter. From the Refill Coordination report,
+          right-click on the
+          patient and select 'Encounter.'
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/right_click_encounter.png" alt="" style="width: 70%; margin: 20px 0;">
+          <br>
+          A window will appear, displaying a list of open encounters
+          at the medical center. Check if a Specialty Pharmacy Encounter has already
+          been created for this month's fill.
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/open_encounter.png" alt="" style="margin: 20px 0;">
+          <br>
+          Open the encounter if it exists, or
+          create a new encounter by clicking <span class="italic-text">New</span> and selecting 'Specialty Pharmacy'.
+          <br>
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/new_encounter.png" alt="" style="margin: 20px 0">
+        </p>
+
+        <div style="margin-left: 50px;">
+          <h4>Progress Notes</h4>
+          <p>
+            Document all pharmacy tasks related to the patient's medication fill
+            in the Progress Notes. Some tasks include:
+          <ul>
+            <li>insurance rejection</li>
+            <li>conversation with the patient</li>
+            <li>sending MyChart message</li>
+            <li>leaving voice mail</li>
+            <li>refill coordination</li>
+            <li>clinical reassessment</li>
+          </ul>
+          <br>
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/progress_note_box.png" alt="" style="margin-left: 20px;">
+          </p>
+          <h4>Specialty Pharmacy Tab</h4>
+          <p>
+            The Specialty Pharmacy tab is used to monitor adherence, update the medication
+            and allergies list, document Drug Utilization Review (DUR), symptoms, and interventions, track patient
+            financial savings, and record patient quality of life. Fill out the
+            Specialty Pharmacy tab after scheduling a refill or completing a clinical reassessment.
+            <br>
+            <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/specialty_tab.png" alt="" style="margin: 20px 20px 0">
+          </p>
+          <h4>Wrap Up Tab</h4>
+          <p>
+            The Wrap Up tab is used for scheduling future follow-ups. Make
+            sure to always select the Refill Coordination checkbox and have a
+            follow-up date. The patient will not populate in the Refill Coordination
+            report if any of these parameters are missing. Also select the Clinical
+            Reassessment checkbox if it was completed for this encounter.
+            <br>
+            <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/wrap_up.png" alt="" style="margin: 20px 20px 0;">
+          </p>
+          <h4>Enrollment Tab</h4>
+          <p>
+            Patients are enrolled in the management program through the Enrollment tab.
+            Enrollments take place during the First Fill Review, while disenrollments
+            occur when patients no longer receive our services. It's advisable to confirm patient's
+            enrollment before scheduling the next follow-up, particularly for
+            returning patients who have resumed using our services.
+            Disenrolled patients will not appear on the Refill Coordination report.
+            <br>
+            <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/enrollment_tab.png" alt="" style="margin: 20px 20px 0;">
+          </p>
+        </div>
+        <p>
+          Only sign encounters if no additional follow-ups are needed for the current month's fill
+          (completing refill coordination without needing an intervention for a patient).
+          Encounters that are pending patient contact, need a pharmacist's intervention,
+          or require a clinical reassessment should not be signed. A pharmacist will
+          review and sign the encounter for interventions or clinical reassessments
+          during verification.
+          <br>
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/sign_encounter.png" alt="" style="margin: 20px 0">
+        </p>
+
+        <h3>Scheduling Refills</h3>
+        <p>
+          Prior to contacting the patient for refills, check the patient notes on
+          the refill report and pharmacy notes in the patient's WAM profile for
+          the reassessment (RA) due date and any other relevant information relating
+          to the patient. Additionally, verify if the patient is enrolled to receive
+          MyChart messages. Follow the patient outreach diagram provided below for
+          specialty and soft specialty medications.
+        </p>
+        <h4>Specialty (Category A, PMP, True Specialty)</h4>
+        <p>
+          Up to six attempts will be made to contact the patient. If the patient is
+          enrolled in MyChart, alternate between sending MyChart messages and making
+          phone calls. In case reaching the patient remains unsuccessful after the sixth
+          attempt, remove the wrap-up date and escalate the encounter to the clinical
+          pharmacist due to noncompliance.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/refill_outreach_pmp.png" alt="" style="width: 110%;">
+        <p>
+          If the patient is not opted out of the patient management program (PMP),
+          screen the patient during the refill call for the following:
+        <ul>
+          <li>Days supply on hand/next injection due date/next cycle start date</li>
+          <li>Changes to the current medication (direction/dose)</li>
+          <li>Changes to the patient's medication profile (new medications/discontinued medications)</li>
+          <li>New allergies</li>
+          <li>Side-effects</li>
+          <li>Medication efficacy (working a little, a lot, can't tell)</li>
+          <li>Adherence (missed/late doses)</li>
+          <li>Quality of life (1-10 best)</li>
+        </ul>
+        If the patient mentions any changes, it is considered an intervention, and the encounter should be routed to the
+        pharmacist (PV2) under the Wrap Up tab.
+        <br>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/routing.png" alt="" style="margin: 20px 0;">
+        </p>
+
+        <h4>Soft Specialty (Category B)</h4>
+        <p>
+          The patient will be contacted up to three times. Use the smart texts
+          ".SOFTSPLASTMYCHART" for the final MyChart message and ".SOFTSPLASTNOTE"
+          for the final progress note.
+        </p>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/refill_outreach_softsp.png" alt="" style="width: 80%; margin: 20px 0;">
+        <h4>Shipping</h4>
+        <p>
+          We offer two shipping services: DCS for Orange County deliveries and
+          FedEx Express for deliveries outside Orange County. No deliveries occur
+          on weekends or holidays, and we do not ship out of state.
+          If the patient has Medicare Part B or Humana Part D insurance, a signature is mandatory.
+          Refer to the provided tables when scheduling a delivery.
+        </p>
+        <br>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/dcs_fedex.png" alt="" style="margin-bottom: 25px;">
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/shipping_table.png" alt="" style="margin-left: 20px;">
+
+        <p>
+          Include the <span class="italic-text">Mail Order</span> flag in WAM with the ship date. <br>
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/mail_order_flag1.png" alt="" style="margin: 20px 0; width: 95%;">
+          <br>
+
+        <p>
+          Change the Delivery Method to Courier and select the ship to address.
+        </p>
+        <br>
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/delivery_method.png" alt="">
+        <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/delivery_info.png" alt="" style="margin-left: 15px;">
+    
+        <h4>Pick Up</h4>
+        <p>
+          When scheduling for a pick up, document both the pick up date and time in the WAM Work Request comments, and ensure Pick Up is selected for the Delivery Method.
+          <br>
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/pick_up.png" alt="" style="margin: 20px 0;">
+        </p>
+     
+        <h4>After Scheduling</h4>
+        <p>
+          Restock the medication by adding the NDC in the specialty inventory draft.
+          Print and fill out the <span class="italic-text">Call Slip</span> to serve as the cover sheet for your order
+          basket.
+          <img src="https://raw.githubusercontent.com/michael-hoang/pharmacy-tasks/main/img/print_call_slip.png" alt="" style="margin-top: 20px; width: 90%;">
+        </p>
+      </div>
+
+    </main>
+  </div>
+</body>
+
+</html>
